@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Height Textarea</title>
+    <style>
+        #myTextarea {
+            resize: none;
+            overflow: hidden;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var textarea = document.getElementById("myTextarea");
+            $(textarea).on("input", function () {
+                this.style.height = "auto";
+                this.style.height = this.scrollHeight + "px";
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <textarea id="myTextarea"></textarea>
+</body>
+
+</html>
